@@ -11,28 +11,28 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing Node.js dependencies...'
-                sh 'cd JENKINS/TP5 && npm install'  
+                sh 'cd TP5 && npm install'  
             }
         }
 
         stage('Run Tests') {
             steps {
                 echo 'Running unit tests...'
-                sh 'cd JENKINS/TP5 && npm test'  
+                sh 'cd TP5 && npm test'  
             }
         }
 
         stage('Build Project') {
             steps {
                 echo 'Building project...'
-                sh 'cd JENKINS/TP5 && npm run build'  
+                sh 'cd TP5 && npm run build'  
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                sh 'cd JENKINS/TP5 && ./deploy.sh'  
+                sh 'cd TP5 && ./deploy.sh'  
             }
         }
     }
